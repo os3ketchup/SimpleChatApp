@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <ImageView
+        android:paddingStart="@dimen/_14sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/message"/>
+
+    <TextView
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
+        android:paddingTop="@dimen/_32sdp"
+
+        android:textSize="@dimen/_24ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Number"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <TextView
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_32sdp"
+        android:lineSpacingExtra="@dimen/_4sdp"
+        android:textSize="@dimen/_16ssp"
+        android:text="Please enter your phone number to verify your account"/>
+
+       <EditText
+           android:id="@+id/et_phoneNum"
+           android:layout_marginStart="@dimen/_32sdp"
+           android:layout_marginEnd="@dimen/_32sdp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:inputType="phone"
+           android:maxLines="1"
+           android:maxLength="13"
+           android:ems="13"
+           android:fontFamily="sans-serif-condensed"
+           android:textCursorDrawable="@color/black"
+           android:textSize="@dimen/_24ssp"
+           android:paddingTop="@dimen/_8sdp"
+           android:paddingBottom="@dimen/_8sdp"
+           android:layout_marginTop="@dimen/_16sdp"
+           android:layout_marginBottom="@dimen/_16sdp"
+           android:hint="Phone Number"
+           android:background="@drawable/oval"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_send"
+        android:layout_marginStart="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_32sdp"
+        style="@style/Widget.Material3.Button"
+        app:backgroundTint="#2196F3"
+        android:fontFamily="monospace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_24ssp"
+        android:text="SEND"/>
+
+</LinearLayout>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/_32sdp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".VerificationActivity">
+
+    <ImageView
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:src="@drawable/code" />
+
+    <TextView
+        android:paddingTop="@dimen/_32sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verification Code"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_24ssp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_receive_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/_4sdp"
+        android:text="Please enter the OTP received in         PHONE NUMBER"
+        android:textSize="@dimen/_16ssp" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_46sdp"
+        android:paddingTop="@dimen/_46sdp"
+        >
+        <EditText
+            android:id="@+id/et_1"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/border_background"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:gravity="center"
+            android:maxLength="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+        <EditText
+            android:id="@+id/et_2"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/border_background"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+        <EditText
+            android:id="@+id/et_3"
+            android:background="@drawable/border_background"
+            android:padding="@dimen/_4sdp"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+        <EditText
+            android:id="@+id/et_4"
+            android:background="@drawable/border_background"
+            android:padding="@dimen/_4sdp"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+        <EditText
+            android:id="@+id/et_5"
+            android:background="@drawable/border_background"
+            android:inputType="number"
+            android:padding="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+        <EditText
+            android:id="@+id/et_6"
+            android:background="@drawable/border_background"
+            android:inputType="number"
+            android:padding="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"/>
+
+    </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:textSize="@dimen/_36ssp"
+            android:gravity="center"
+            tools:text = "show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_verify"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="VERIFY"
+        android:backgroundTint="#2196F3"
+        android:textSize="@dimen/_24ssp"
+         />
+</LinearLayout>
