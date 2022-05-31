@@ -10,7 +10,7 @@ import uz.os3ketchup.navigationdrawer.databinding.ItemFromBinding
 import uz.os3ketchup.navigationdrawer.databinding.ItemToBinding
 import uz.os3ketchup.navigationdrawer.models.Message
 
-class MessageAdapter(var list: List<Message>, var firebaseAuth: FirebaseAuth) :
+class MessageAdapter(var list: List<Message>, var firebaseAuth: FirebaseAuth,var toUID:String) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class FromVH(var itemFromBinding: ItemFromBinding) :
@@ -52,10 +52,13 @@ class MessageAdapter(var list: List<Message>, var firebaseAuth: FirebaseAuth) :
     override fun getItemViewType(position: Int): Int {
         firebaseAuth = Firebase.auth
         val uid = firebaseAuth.currentUser?.uid
+
         return if (list[position].fromUID == uid) {
             1
-        } else {
+        } else if(list[position].toUID==toUID) {
             2
+        }else{
+            3
         }
 
 

@@ -1,5 +1,6 @@
 package uz.os3ketchup.navigationdrawer
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
@@ -29,14 +30,15 @@ class ChatActivity : AppCompatActivity() {
         val window = this.window
         setWindow( window)
         firebaseAuth = Firebase.auth
-     val cuid =    firebaseAuth.currentUser?.uid
 
+        binding.topAppBar.setNavigationOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
+         val cuid =    firebaseAuth.currentUser?.uid
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("messages")
         val toUID = intent.getStringExtra(USER_UID_KEY)!!
-
-
-
 
         binding.btnSend.setOnClickListener {
             val messages = Message(binding.etMessage.text.toString(),cuid!!,toUID)
@@ -50,13 +52,13 @@ class ChatActivity : AppCompatActivity() {
 
                 for (child in snapshot.children) {
                     val message = child.getValue(Message::class.java)
-                    if (message?.text != Constants.mAuth.currentUser?.uid) {
-                        if (message != null) {
-                            messageList.add(message)
-                        }
-                    }
+                    if (message!=null && ((message.fromUID == cuid && message.toUID == toUID) || (message.fromUID==toUID && message.toUID==cuid)))
+                    messageList.add(message)
+
+
+
                 }
-                val messageAdapter = MessageAdapter( messageList,firebaseAuth)
+                val messageAdapter = MessageAdapter( messageList,firebaseAuth,toUID)
                 binding.rvMessage.scrollToPosition(messageList.count()-1)
                 binding.rvMessage.adapter = messageAdapter
             }
@@ -72,6 +74,7 @@ class ChatActivity : AppCompatActivity() {
         list.add(Message("Vaaleykum assalom","2","1"))
         list.add(Message("Yaxshimisiz","1","2"))
         list.add(Message("Rahmat yaxshi","2","1"))
+        list.add(Message("Rahmat yaxshi","3","1"))
         binding.rvMessage.adapter = MessageAdapter(list)*/
     }
 
