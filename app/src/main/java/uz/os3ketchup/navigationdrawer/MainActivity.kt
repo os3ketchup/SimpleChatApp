@@ -2,21 +2,16 @@ package uz.os3ketchup.navigationdrawer
 
 import android.content.Intent
 import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.TableLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import uz.os3ketchup.navigationdrawer.Constants.mAuth
+import uz.os3ketchup.navigationdrawer.Constants.username
 import uz.os3ketchup.navigationdrawer.adapter.MyViewPagerAdapter
-import uz.os3ketchup.navigationdrawer.adapter.UserAdapter
 import uz.os3ketchup.navigationdrawer.databinding.ActivityMainBinding
-import uz.os3ketchup.navigationdrawer.models.User
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -30,9 +25,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+            val user_name = intent.getStringExtra("username")
+
+
+
         val header = binding.navigationView.inflateHeaderView(R.layout.header_layout)
         val tvNumber = header.findViewById<TextView>(R.id.tv_number_profile)
-        tvNumber.text = Constants.mAuth.currentUser?.phoneNumber
+        val tvName = header.findViewById<TextView>(R.id.tv_header_name)
+
+        tvNumber.text = mAuth.currentUser?.phoneNumber
+        if (user_name!=null){
+            tvName.text = user_name
+        }
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("users")
@@ -100,9 +104,14 @@ class MainActivity : AppCompatActivity() {
             // Handle menu item selected
 
             when (menuItem.itemId) {
+                R.id.settings->{
+                        startActivity(Intent(this,Settings::class.java))
+                }
+
+
                 R.id.log_out -> {
                     Constants.mAuth.signOut()
-                    if (Constants.mAuth.currentUser == null) {
+                    if (mAuth.currentUser == null) {
                         startActivity(Intent(this, LoginActivity::class.java))
                         finish(); // destroy login so user can't come back with back button
                     }

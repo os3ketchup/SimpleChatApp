@@ -4,4 +4,8 @@
     <string name="log_out">Log out</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="remove_photo">remove_photo</string>
+    <string name="check">check</string>
+    <string name="last_name_optional">Last name (optional)</string>
+    <string name="first_name">First name</string>
 </resources>

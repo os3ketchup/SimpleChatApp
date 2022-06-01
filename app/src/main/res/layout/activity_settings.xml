@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ChatActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:menu="@menu/menu_appbar"
+            android:fitsSystemWindows="false"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="User" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+<LinearLayout
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_add_settings"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:background="@drawable/circular"
+        android:src="@drawable/ic_person"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_first_name"
+        app:boxBackgroundColor="#A7B3F4"
+        android:layout_margin="@dimen/_8sdp"
+        app:errorEnabled="true"
+        android:minEms="13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_first_name_main"
+            android:layout_width="wrap_content"
+            android:maxLength="13"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_name"
+            android:ems="13"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_last_name"
+        app:boxBackgroundColor="#A7B3F4"
+        android:layout_margin="@dimen/_8sdp"
+        android:minEms="13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_last_name_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="13"
+            android:hint="@string/last_name_optional"
+            android:ems="13"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>

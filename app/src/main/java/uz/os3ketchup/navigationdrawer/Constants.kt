@@ -8,5 +8,6 @@ object Constants {
     lateinit var mAuth: FirebaseAuth
     var mVerificationId:String? = null
     var mSMSCode:String? = null
+    var username:String? = null
     var userPhoneNumber = ""
 }

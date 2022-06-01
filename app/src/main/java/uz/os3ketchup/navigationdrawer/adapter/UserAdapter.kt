@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.os3ketchup.navigationdrawer.ChatActivity
 import uz.os3ketchup.navigationdrawer.Constants
 import uz.os3ketchup.navigationdrawer.Constants.USER_UID_KEY
+import uz.os3ketchup.navigationdrawer.Constants.mAuth
+import uz.os3ketchup.navigationdrawer.Constants.username
 import uz.os3ketchup.navigationdrawer.databinding.ItemRvBinding
 import uz.os3ketchup.navigationdrawer.models.User
 import java.util.*
@@ -23,9 +25,9 @@ class UserAdapter(var context: Context ,var list: List<User>) : RecyclerView.Ada
         fun onBind(user: User) {
             val cut = user.UId.subSequence(3..9).toString().lowercase(Locale.getDefault())
             val whole =  user.UId
-            user.name = cut
-
+            /*user.name = cut*/
             itemRV.tvMessage.text = user.name
+
             itemRV.root.setOnClickListener {
                 val intent =  Intent(context,ChatActivity::class.java)
                 intent.putExtra(USER_UID_KEY,whole)

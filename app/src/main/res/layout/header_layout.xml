@@ -16,6 +16,7 @@
     android:src="@drawable/user"
     />
     <TextView
+        android:id="@+id/tv_header_name"
         android:paddingTop="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_16sdp"
         android:textColor="@color/white"

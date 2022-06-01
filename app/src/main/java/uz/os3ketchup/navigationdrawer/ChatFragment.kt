@@ -1,11 +1,13 @@
 package uz.os3ketchup.navigationdrawer
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.*
+import uz.os3ketchup.navigationdrawer.Constants.username
 import uz.os3ketchup.navigationdrawer.adapter.UserAdapter
 import uz.os3ketchup.navigationdrawer.databinding.FragmentChatBinding
 import uz.os3ketchup.navigationdrawer.models.User
@@ -29,11 +31,19 @@ class ChatFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("users")
+        val user_name = requireActivity().intent.getStringExtra("username")
+        /*var user = User(Constants.mAuth.uid!!, name = Constants.mAuth.uid!!.substring(0..5))
+        databaseReference.child(Constants.mAuth.uid!!).setValue(user)*/
+        if (user_name!=null){
+          val user = User(Constants.mAuth.uid!!, name = user_name)
+            databaseReference.child(Constants.mAuth.uid!!).setValue(user)
+        }
 
-        val user = User(Constants.mAuth.uid!!)
 
 
-        databaseReference.child(Constants.mAuth.uid!!).setValue(user)
+
+
+
 
 
 
@@ -48,6 +58,7 @@ class ChatFragment : Fragment() {
                         }
                     }
                 }
+
                 val userAdapter = UserAdapter(requireContext(), list)
                 binding.rvChat.adapter = userAdapter
             }
