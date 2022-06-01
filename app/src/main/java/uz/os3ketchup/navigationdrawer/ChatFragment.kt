@@ -34,18 +34,9 @@ class ChatFragment : Fragment() {
         val user_name = requireActivity().intent.getStringExtra("username")
         /*var user = User(Constants.mAuth.uid!!, name = Constants.mAuth.uid!!.substring(0..5))
         databaseReference.child(Constants.mAuth.uid!!).setValue(user)*/
-        if (user_name!=null){
-          val user = User(Constants.mAuth.uid!!, name = user_name)
+
+          val user = User(Constants.mAuth.uid!!)
             databaseReference.child(Constants.mAuth.uid!!).setValue(user)
-        }
-
-
-
-
-
-
-
-
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-            val user_name = intent.getStringExtra("username")
+
+        val user_name = intent.getStringExtra("username")
 
 
 
@@ -62,33 +63,6 @@ class MainActivity : AppCompatActivity() {
             }
         }.attach()
 
-/*        val user = User(Constants.mAuth.uid!!)
-
-
-          *//*  databaseReference.child(databaseReference.push().key!!).setValue(user)*//*
-            databaseReference.child(Constants.mAuth.uid!!).setValue(user)
-
-
-
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val list = ArrayList<User>()
-                for (child in snapshot.children) {
-                    val user = child.getValue(User::class.java)
-                    if (user?.UId != Constants.mAuth.currentUser?.uid) {
-                        if (user != null) {
-                            list.add(user)
-                        }
-                    }
-                }
-                val userAdapter = UserAdapter(this@MainActivity,list)
-                binding.rvAdapter.adapter = userAdapter
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })*/
 
 
 
@@ -113,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                     Constants.mAuth.signOut()
                     if (mAuth.currentUser == null) {
                         startActivity(Intent(this, LoginActivity::class.java))
-                        finish(); // destroy login so user can't come back with back button
+                        finish() // destroy login so user can't come back with back button
                     }
                 }
             }

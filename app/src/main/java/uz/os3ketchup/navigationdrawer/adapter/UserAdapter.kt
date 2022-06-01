@@ -26,7 +26,12 @@ class UserAdapter(var context: Context ,var list: List<User>) : RecyclerView.Ada
             val cut = user.UId.subSequence(3..9).toString().lowercase(Locale.getDefault())
             val whole =  user.UId
             /*user.name = cut*/
-            itemRV.tvMessage.text = user.name
+            if (user.name.isEmpty()){
+                itemRV.tvMessage.text = user.name
+            }else{
+                itemRV.tvMessage.text = user.name
+            }
+
 
             itemRV.root.setOnClickListener {
                 val intent =  Intent(context,ChatActivity::class.java)

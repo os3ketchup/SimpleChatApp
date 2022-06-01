@@ -45,6 +45,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_first_name"
         app:boxBackgroundColor="#A7B3F4"
+
         android:layout_margin="@dimen/_8sdp"
         app:errorEnabled="true"
         android:minEms="13"

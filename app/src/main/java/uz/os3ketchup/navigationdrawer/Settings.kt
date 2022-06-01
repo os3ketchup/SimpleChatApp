@@ -12,46 +12,43 @@ class Settings : AppCompatActivity() {
     lateinit var binding: ActivitySettingsBinding
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.topAppBar.setNavigationOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-        binding.topAppBar.setOnMenuItemClickListener {
-            menu->
-            when(menu.itemId){
-                R.id.check->{
-                 val name =    binding.etFirstNameMain.text.toString()
-                   val lastName = binding.etLastNameMain.text.toString()
-                    val fullName = "$name $lastName"
-                    val user = User(name=fullName)
-                    val intent = Intent(this,MainActivity::class.java)
-                    intent.putExtra("username",user.name)
-                    startActivity(intent)
-                    finish()
+        binding.topAppBar.setOnMenuItemClickListener { menu ->
+            when (menu.itemId) {
+                R.id.check -> {
+                    if (binding.etFirstNameMain.text.toString().trim().isEmpty()) {
+                        binding.etFirstName.error = "Please fill the gaps"
+                    } else {
+                        val name = binding.etFirstNameMain.text.toString()
+                        val lastName = binding.etLastNameMain.text.toString()
+                        val fullName = "$name $lastName"
+                        val user = User(name = fullName)
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("username", user.name)
+                        startActivity(intent)
+                        finish()
+                    }
                     true
-                }else->{
+                }
+                else -> {
                     false
                 }
             }
         }
 
 
-
         val window = this.window
-        setWindow( window)
+        setWindow(window)
 
     }
-
-
-
-
-
 
 
     private fun setWindow(window: Window) {
