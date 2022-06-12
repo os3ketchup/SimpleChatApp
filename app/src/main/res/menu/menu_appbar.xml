@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/no_photo"
+    android:icon="@drawable/ic_nophoto"
+    app:showAsAction="ifRoom"
+    android:title="@string/remove_photo" />
+    <item
+        android:id="@+id/check"
+        android:icon="@drawable/ic_check"
+        app:showAsAction="ifRoom"
+        android:title="@string/check" />
+</menu>
