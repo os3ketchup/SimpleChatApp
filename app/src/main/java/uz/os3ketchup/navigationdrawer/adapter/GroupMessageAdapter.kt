@@ -10,10 +10,7 @@ import uz.os3ketchup.navigationdrawer.databinding.ItemFromBinding
 import uz.os3ketchup.navigationdrawer.databinding.ItemToBinding
 import uz.os3ketchup.navigationdrawer.models.Message
 
-class MessageAdapter(
-    var list: List<Message>, var firebaseAuth: FirebaseAuth,
-    var toUID: String
-) :
+class GroupMessageAdapter(var list: List<Message>, var firebaseAuth: FirebaseAuth, var toUID:String) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class FromVH(var itemFromBinding: ItemFromBinding) :
@@ -58,9 +55,9 @@ class MessageAdapter(
 
         return if (list[position].fromUID == uid) {
             1
-        } else if (list[position].toUID == toUID) {
+        } else if(list[position].toUID==toUID) {
             2
-        } else {
+        }else{
             3
         }
 

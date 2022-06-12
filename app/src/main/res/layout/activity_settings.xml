@@ -33,19 +33,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/iv_add_settings"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
-        android:padding="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_16sdp"
-        android:background="@drawable/circular"
-        android:src="@drawable/ic_person"/>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivAddSettings"
+        android:scaleType="centerCrop"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:padding="5dp"
+        app:strokeWidth="1dp" app:shapeAppearanceOverlay="@style/circular"
+        app:strokeColor="#3C96DD"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_person"
+        android:layout_margin="10dp"
+        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_first_name"
         app:boxBackgroundColor="#A7B3F4"
-
         android:layout_margin="@dimen/_8sdp"
         app:errorEnabled="true"
         android:minEms="13"

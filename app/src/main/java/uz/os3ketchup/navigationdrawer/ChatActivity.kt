@@ -11,10 +11,8 @@ import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import uz.os3ketchup.navigationdrawer.Constants.USER_UID_KEY
 import uz.os3ketchup.navigationdrawer.adapter.MessageAdapter
-import uz.os3ketchup.navigationdrawer.adapter.UserAdapter
 import uz.os3ketchup.navigationdrawer.databinding.ActivityChatBinding
 import uz.os3ketchup.navigationdrawer.models.Message
-import uz.os3ketchup.navigationdrawer.models.User
 
 class ChatActivity : AppCompatActivity() {
     lateinit var binding: ActivityChatBinding

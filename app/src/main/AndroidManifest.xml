@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer">
         <activity
-            android:name=".Settings"
-            android:windowSoftInputMode="adjustResize"
+            android:name=".GroupActivity"
             android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ChatActivity"
             android:exported="false"
@@ -36,14 +40,10 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

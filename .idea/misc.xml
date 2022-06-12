@@ -7,10 +7,15 @@
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/drawable/ic_person.xml" value="0.1515" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/drawable/oval.xml" value="0.1" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/activity_chat.xml" value="0.23802083333333332" />
+        <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/activity_group.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/dialog_chat.xml" value="0.23802083333333332" />
+        <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/dialog_group.xml" value="0.23802083333333332" />
+        <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/fragment_chat.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/fragment_group.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/header_layout.xml" value="0.23802083333333332" />
+        <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/item_from.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/item_rv.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/layout/item_to.xml" value="0.23802083333333332" />
         <entry key="..\:/MyAndroidProjects/SimpleChatApp/app/src/main/res/menu/menu_appbar.xml" value="0.23802083333333332" />

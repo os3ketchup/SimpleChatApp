@@ -1,5 +1,6 @@
 package uz.os3ketchup.navigationdrawer.adapter
 
+import android.content.Context
 import android.content.res.Resources
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -7,8 +8,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import uz.os3ketchup.navigationdrawer.ChatFragment
 import uz.os3ketchup.navigationdrawer.GroupFragment
+import uz.os3ketchup.navigationdrawer.MainActivity
 
-class MyViewPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity) {
+class MyViewPagerAdapter(var context: Context,fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
         return 2
     }

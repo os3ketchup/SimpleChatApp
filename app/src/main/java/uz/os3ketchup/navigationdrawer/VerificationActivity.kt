@@ -26,7 +26,7 @@ class VerificationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerificationBinding
     private lateinit var phoneNumber: String
-    private var receivedCode = ""
+
     private var etCode = ""
 
 
